@@ -4,6 +4,10 @@
         "module": "commonjs",
         "target": "ES2020",
         "esModuleInterop": true,
-        "allowJs": true
-    }
+        "allowJs": true,
+         "strictNullChecks": true
+    },
+     "paths": {
+      "@core/*": ["./src/common/core/*"]
+    },
 }
