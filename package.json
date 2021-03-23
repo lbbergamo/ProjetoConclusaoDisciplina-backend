@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
-    "start": "npm run build && node ./build/index.js",
+    "start": "npm run build && node ./dist/index.js",
     "test": "jest",
     "test:staged": "jest",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
