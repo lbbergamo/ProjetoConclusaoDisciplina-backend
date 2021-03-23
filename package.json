@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
-    "start": "node dist/index.js",
+    "start": "npm run build && node ./build/index.js",
     "test": "jest",
     "test:staged": "jest",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
@@ -47,6 +47,6 @@
     "express": "^4.17.1"
   },
   "engines": {
-    "node": "14.x"
+    "node": "15.x"
   }
 }
