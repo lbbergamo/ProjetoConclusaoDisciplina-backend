@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 
 class CepAdapter {
   async post (req: Request, res: Response): Promise<Response> {
+    console.log('ta chegando na rota')
     const result = {
       statusCode: '200',
       CEP: '11040-010',
