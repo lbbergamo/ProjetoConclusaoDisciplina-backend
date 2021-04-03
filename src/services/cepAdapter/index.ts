@@ -1,7 +1,11 @@
-import { Request, Response } from 'express'
-
+import { request, Request, Response } from 'express'
+import InfoCep from '../../clients/infoCep/index'
+import ClimaTempo from '../../clients/climaTempo/index'
 class CepAdapter {
   async post (req: Request, res: Response): Promise<Response> {
+    const numberCep = req.params.numberCep;
+    const infoCep = InfoCep.get(numberCep);
+    const climaTempo = ClimaTempo.get({cep:infoCep.numberCep});
     const result = {
       statusCode: '200',
       CEP: '11040-010',
