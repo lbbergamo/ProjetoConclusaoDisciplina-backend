@@ -1,16 +1,14 @@
-import { getAdapter } from '../../common/core/https';
-
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+import { getAdapter } from './../../common/core/https'
 class ClimaTempo {
-    static get(params : IClimaTempo): any {
-        return getAdapter({
-            url: process.env.INFO_CEP_URL,
-            parameters: {
-                number: params.cep
-            }
-        })
-    }
+  async get (params: IClimaTempo): Promise<any> {
+    return await getAdapter({
+      url: process.env.CLIMA_TEMPO_URL + '/api/v1/flood/risk?latitude=' + params.lat + '&longitude=' + params.lng + '?token=' + process.env.CLIMA_TEMPO_TOKEN
+    })
+  }
 }
-export default ClimaTempo
+export default new ClimaTempo()
 interface IClimaTempo{
-    cep: string
+  lat: string
+  lng: string
 }
