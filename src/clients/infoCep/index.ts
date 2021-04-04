@@ -1,15 +1,12 @@
-import https from '@core/http';
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+import { getAdapter } from './../../common/core/https'
 
-class request{
-
-    static get(number : string) : any {
-        return https.get({
-            url: process.env.INFO_CEP_URL,
-            parameters: {
-                number : 'number'
-            }
-        })
-    }
+class InfoCep {
+  async get (number: string): Promise <any> {
+    return await getAdapter({
+      url: process.env.INFO_CEP_URL + `?cep=${number}`
+    })
+  }
 }
 
-export default request
+export default new InfoCep()
