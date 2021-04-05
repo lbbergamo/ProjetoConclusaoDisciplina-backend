@@ -1,6 +1,6 @@
 import express from 'express'
 
-import CepAdapter from '../services/cepAdapter/index'
+import CepAdapter from './cepAdapter/index'
 
 const routes = express.Router()
 const cep = new CepAdapter()
