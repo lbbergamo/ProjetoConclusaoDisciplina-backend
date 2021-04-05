@@ -1,6 +1,6 @@
 import express from 'express'
 import { createServer, Server } from 'http'
-import routes from '../../services/routes'
+import routes from '../../controllers/routes'
 import cors from 'cors'
 
 require('dotenv/config')
