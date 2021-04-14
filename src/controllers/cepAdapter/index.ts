@@ -6,11 +6,11 @@ import { receiveCep } from './services/infoCep/index'
 class CepAdapter {
   async post (req: Request, res: Response): Promise<Response> {
     try {
-      const body = req.body
-      const { addressFormat, data: Endereco } = await receiveCep(body.cep)
+      const { cep } = req.body
+      if (cep.length < 8 || cep.toString().length < 8) return res.status(400).json({ message: 'Invalid request' })
+      const { addressFormat, data: Endereco } = await receiveCep(cep.toString().replace('-', ''))
       const { lat, lng } = await receiveGeoMaps(addressFormat)
-      const request = await receiveWeatherMap({ lat, lng })
-      const { weather, main } = request.data
+      const { weather, main } = await receiveWeatherMap({ lat, lng })
       const result = {
         Endereco,
         tempo: {
@@ -22,9 +22,10 @@ class CepAdapter {
           longitude: lng
         }
       }
-      return res.json(result).status(200)
+      return res.json(result)
     } catch (error) {
-      return res.json({ message: error.message, erro: error }).status(500)
+      console.log(error)
+      return res.status(400).json({ message: error.message, erro: error })
     }
   }
 }
