@@ -9,7 +9,7 @@ var _express = _interopRequireDefault(require("express"));
 
 var _http = require("http");
 
-var _routes = _interopRequireDefault(require("../../services/routes"));
+var _routes = _interopRequireDefault(require("../../controllers/routes"));
 
 var _cors = _interopRequireDefault(require("cors"));
 
