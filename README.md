@@ -24,14 +24,14 @@ $ git clone git@github.com:lbbergamo/ProjetoConclusaoDisciplina-backend.git
 ```
 
 ## :book: Features
-- [ ] Estrutura de pastas
-- [ ] Ambiente de Desenvolvimento
+- [X] Estrutura de pastas
+- [X] Ambiente de Desenvolvimento
     - [ ] Configuração de teste
     - [ ] Docker
-- [ ] Primeiro deploy
+- [X] Primeiro deploy
 - [ ] CEP
-    - [ ] Realizar a consulta do CEP
-        - [ ] Utilizar a api `http://cep.bldstools.com/?cep=CEP_NUMBER`
+    - [X] Realizar a consulta do CEP
+        - [X] Utilizar a api `http://cep.bldstools.com/?cep=CEP_NUMBER`
     - [ ] Realizar a consulta da logitude
         - [ ] Utilizar a api `https://maps.googleapis.com/maps/api/geocode/json?address=CEP_NUMBER&key=MINHA_KEY`
         - [ ] Salvar em um banco de dados
