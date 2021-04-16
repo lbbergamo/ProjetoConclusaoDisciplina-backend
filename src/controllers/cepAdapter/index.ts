@@ -7,11 +7,12 @@ class CepAdapter {
   async post (req: Request, res: Response): Promise<Response> {
     try {
       const { cep } = req.body
-      if (cep.length < 8 || cep.toString().length < 8) return res.status(400).json({ message: 'Invalid request' })
+      if (cep.toString().length < 8) return res.status(400).json({ message: 'Invalid request' })
       const { addressFormat, data: Endereco } = await receiveCep(cep.toString().replace('-', ''))
       const { lat, lng } = await receiveGeoMaps(addressFormat)
       const { weather, main } = await receiveWeatherMap({ lat, lng })
       const result = {
+        CEP: cep,
         Endereco,
         tempo: {
           status: weather[0].description,
