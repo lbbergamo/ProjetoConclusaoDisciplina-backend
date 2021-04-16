@@ -18,7 +18,7 @@ class CepAdapter {
       const {
         cep
       } = req.body;
-      if (cep.length < 8 || cep.toString().length < 8) return res.status(400).json({
+      if (cep.toString().length < 8) return res.status(400).json({
         message: 'Invalid request'
       });
       const {
@@ -37,6 +37,7 @@ class CepAdapter {
         lng
       });
       const result = {
+        CEP: cep,
         Endereco,
         tempo: {
           status: weather[0].description,
