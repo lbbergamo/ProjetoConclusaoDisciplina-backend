@@ -152,13 +152,11 @@ $ npm test
     - [ ] Configuração de teste
     - [ ] Docker
 - [X] Primeiro deploy
-- [ ] CEP
+- [x] CEP
     - [X] Realizar a consulta do CEP
         - [X] Utilizar a api `http://cep.bldstools.com/?cep=CEP_NUMBER`
     - [x] Realizar a consulta da logitude
         - [x] Utilizar a api `https://maps.googleapis.com/maps/api/geocode/json?address=CEP_NUMBER&key=MINHA_KEY`
-        - [ ] Salvar em um banco de dados
-            - [ ] Utilizar firebase ou banco de dados da azure
     - [x] Retornar os dados conforme json abaixo
         ```json
         {
