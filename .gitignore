@@ -4,5 +4,5 @@ node_modules
 .env
 .vscode/settings.json
 package-lock.json
-src/clients/firebase/credentialsFirebase.json
 uploads/
+credentialsFirebase.json
