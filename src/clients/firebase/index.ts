@@ -7,6 +7,6 @@ export default async (id: string) => {
   const image = await getImage(data.imageUrl)
   return {
     ...data,
-    image
+    url: image
   }
 }
