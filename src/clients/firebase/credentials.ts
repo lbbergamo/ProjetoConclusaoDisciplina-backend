@@ -1,9 +1,7 @@
 import admin from 'firebase-admin'
-import credentialsFirebase from './credentialsFirebase.json'
+import serviceAccount from './credentialsFirebase.json'
 
-const myAdmin = admin.initializeApp({
-  credential: admin.credential.cert(credentialsFirebase),
+export default admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
   storageBucket: 'infocep-cad3e.appspot.com'
 })
-
-export default { myAdmin }
