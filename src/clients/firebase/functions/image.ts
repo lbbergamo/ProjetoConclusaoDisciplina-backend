@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-throw-literal */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import myAdmin from './../credentials'
@@ -15,5 +16,5 @@ export default async (imageName: string) => {
       })
     })
     .then(() => `uploads/image/${imageName}`)
-    .catch(error => { throw new Error(error.message) })
+    .catch(error => { throw { message: error.message, status: "Couldn't recover image" } })
 }
