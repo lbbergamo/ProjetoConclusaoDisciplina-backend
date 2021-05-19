@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-class pdfAdapter {
+class PdfAdapter {
   async get (req: Request, res: Response): Promise<Response> {
     try {
       return res.json({ message: 'Success request' })
@@ -10,4 +10,4 @@ class pdfAdapter {
   }
 }
 
-export default pdfAdapter
+export default PdfAdapter
