@@ -7,8 +7,10 @@ import PdfAdapter from './pdfAdapter'
 const routes = express.Router()
 const cep = new CepAdapter()
 const pdf = new PdfAdapter()
+
 routes.use(function (req, res, next) {
-  if (req.headers.authorization !== process.env.AUTHORIZATION) {
+  if (req.headers.authorization !== process.env.AUTHORIZATION &&
+     !req.url.includes('uploads')) {
     res.status(401).json({
       message: 'Unauthorized',
       info: 'Contact the developer'
