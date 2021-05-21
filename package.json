@@ -47,7 +47,8 @@
     "express": "^4.17.1",
     "firebase-admin": "^9.8.0",
     "fs": "*",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pdfkit": "^0.12.1"
   },
   "engines": {
     "node": "15.x"
