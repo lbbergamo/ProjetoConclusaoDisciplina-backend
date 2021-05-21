@@ -1,3 +1,4 @@
+/* eslint-disable node/no-path-concat */
 import express from 'express'
 import { createServer, Server } from 'http'
 import routes from '../../controllers/routes'
@@ -14,6 +15,7 @@ class App {
     this.app.use(cors())
     this.app.use(express.json())
     this.app.use(routes)
+    this.app.use(express.static('public'))
   }
 
   private ready (): void {
