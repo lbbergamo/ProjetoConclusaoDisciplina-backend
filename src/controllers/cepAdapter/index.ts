@@ -25,7 +25,6 @@ class CepAdapter {
       }
       return res.json(result)
     } catch (error) {
-      console.log(error)
       return res.status(400).json({ message: error.message, erro: error })
     }
   }
