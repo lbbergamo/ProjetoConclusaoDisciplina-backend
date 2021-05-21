@@ -11,7 +11,7 @@ export default async (imageName: string) => {
     .download()
     .then(async (data: Array<WithImplicitCoercion<ArrayBuffer | SharedArrayBuffer>>) => {
       const buffer = Buffer.from(data[0])
-      fs.writeFile(path.resolve('.', 'uploads', 'image', imageName), buffer, 'binary', (err, data) => { })
+      fs.writeFile(path.resolve('.', 'public', 'uploads', 'image', imageName), buffer, 'binary', (err, data) => { })
     })
     .then(() => `uploads/image/${imageName}`)
     .catch(error => { throw { message: error.message, status: "Couldn't recover image" } })
