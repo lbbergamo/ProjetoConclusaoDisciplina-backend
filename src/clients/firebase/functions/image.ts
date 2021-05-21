@@ -7,7 +7,7 @@ import path from 'path'
 
 export default async (imageName: string) => {
   const bucket = myAdmin.storage().bucket()
-  return await bucket.file('cavalo.jpg')
+  return await bucket.file(imageName)
     .download()
     .then(async (data: Array<WithImplicitCoercion<ArrayBuffer | SharedArrayBuffer>>) => {
       const buffer = Buffer.from(data[0])
